@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: "隣人子供観察", date: "2026.07.31", id: "1nx-r95NSapyfcUzVswrbzRTjbsAdxcLw" },
     { title: "漫画吹き出しUI", date: "2026.08.03", id: "1JvxYFgarPZ79xJFHf_zsXsiBxt8AAh0A" },
     { title: "インタラクト変更", date: "2026.08.03", id: "1anIlzipYly7HP5b7ieuZUKh5lPX-_sXM" },
+    { title: "日本ぽいインタラクト改", date: "2026.08.05", id: "1cXB8RLjAj0ejr_-UCNBaD3kN09FJ-bhT" },
   ];
 
   const grid = document.getElementById('devlogGrid');
