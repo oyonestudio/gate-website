@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: "インタラクト変更", date: "2026.08.03", id: "1anIlzipYly7HP5b7ieuZUKh5lPX-_sXM" },
     { title: "日本ぽいインタラクト改", date: "2026.08.05", id: "1cXB8RLjAj0ejr_-UCNBaD3kN09FJ-bhT" },
     { title: "掴み演出実装", date: "2026.08.07", id: "1J1KG539x4rlTJnKWFdnpzD34tWl5muG6" },
+    { title: "動く漫画風実装", date: "2026.08.15", id: "15bln8Khc9-_2884pODZE8l-U5y3NJUpt" },
   ];
 
   const grid = document.getElementById('devlogGrid');
