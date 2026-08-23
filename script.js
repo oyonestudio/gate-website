@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: "掴み演出実装", date: "2026.08.07", id: "1J1KG539x4rlTJnKWFdnpzD34tWl5muG6" },
     { title: "動く漫画風実装", date: "2026.08.15", id: "15bln8Khc9-_2884pODZE8l-U5y3NJUpt" },
     { title: "漫画風銃", date: "2026.08.18", id: "1r_C6KymJA_ldyD5NeJ0uTqEIaIDc4xi-" },
+    { title: "敵の実装", date: "2026.08.23", id: "11ndld322U1i1krRWg-Bnupah6oJa27lh" },
   ];
 
   const grid = document.getElementById('devlogGrid');
