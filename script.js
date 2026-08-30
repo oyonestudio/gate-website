@@ -80,6 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: "敵の実装", date: "2026.08.23", id: "11ndld322U1i1krRWg-Bnupah6oJa27lh" },
     { title: "レトロな世界実装", date: "2026.08.24", id: "1GubsnDExrqqGMSbCfSseGKfBN3mm9ZQP" },
     { title: "パリィの実装", date: "2026.08.25", id: "1Br_tKNxlLuFyMhhpqCzd4d3oaE35dWlc" },
+    { title: "スロット全回復", date: "2026.08.30", id: "1EDuU3l9IDezz2pqkMD2U8w7QwXSqkPc2" },
+    { title: "レトロな戦い", date: "2026.08.30", id: "1m1g0sVdA4ncA-V9xP8X1bbLKm9v-S1-e" },
   ];
 
   const grid = document.getElementById('devlogGrid');
