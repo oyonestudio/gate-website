@@ -119,7 +119,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (player.classList.contains('is-playing')) return;
       stopAllPlayers();
       player.classList.add('is-playing');
-      player.innerHTML = `<iframe src="https://drive.google.com/file/d/${item.id}/preview" allow="autoplay" loading="lazy"></iframe>`;
+      player.innerHTML = `
+        <iframe src="https://drive.google.com/file/d/${item.id}/preview" allow="autoplay" loading="lazy"></iframe>
+        <div class="devlog-loading"><span>読み込み中...</span></div>
+      `;
+      const loadingEl = player.querySelector('.devlog-loading');
+      setTimeout(() => { loadingEl.classList.add('is-hidden'); }, 2500);
     });
 
     const meta = document.createElement('div');
