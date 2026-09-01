@@ -14,6 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ===== Hero parallax ===== */
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    window.addEventListener('scroll', () => {
+      const offset = Math.min(window.scrollY * 0.25, 120);
+      hero.style.backgroundPosition = `center calc(50% + ${offset}px)`;
+    });
+  }
+
   /* ===== To-top button ===== */
   const toTop = document.getElementById('toTop');
   window.addEventListener('scroll', () => {
