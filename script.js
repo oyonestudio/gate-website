@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: "パリィの実装", date: "2026.08.25", id: "1Br_tKNxlLuFyMhhpqCzd4d3oaE35dWlc" },
     { title: "スロット全回復", date: "2026.08.30", id: "1EDuU3l9IDezz2pqkMD2U8w7QwXSqkPc2" },
     { title: "レトロな戦い", date: "2026.08.30", id: "1m1g0sVdA4ncA-V9xP8X1bbLKm9v-S1-e" },
+    { title: "アパートモデリング", date: "2026.09.01", id: "1vTAXRZZy4dSKwMU3V0v3vdoZdXvkw-SI" },
   ];
 
   const grid = document.getElementById('devlogGrid');
