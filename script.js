@@ -92,6 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: "スロット全回復", date: "2026.08.30", id: "1EDuU3l9IDezz2pqkMD2U8w7QwXSqkPc2" },
     { title: "レトロな戦い", date: "2026.08.30", id: "1m1g0sVdA4ncA-V9xP8X1bbLKm9v-S1-e" },
     { title: "アパートモデリング", date: "2026.09.01", id: "1vTAXRZZy4dSKwMU3V0v3vdoZdXvkw-SI" },
+    { title: "窓ガラス実装", date: "2026.09.02", id: "1oY-81HnFtt0UaHJMWoFpVNTWZqlkv-bQ" },
+    { title: "民家の内部実装", date: "2026.09.02", id: "1QgehfgoqyE17i8Z7jperi7Ykmxq6W6R_" },
   ];
 
   const grid = document.getElementById('devlogGrid');
