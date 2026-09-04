@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: "窓ガラス実装", date: "2026.09.02", id: "1oY-81HnFtt0UaHJMWoFpVNTWZqlkv-bQ" },
     { title: "民家の内部実装", date: "2026.09.02", id: "1QgehfgoqyE17i8Z7jperi7Ykmxq6W6R_" },
     { title: "スライム実装", date: "2026.09.04", id: "1u4c2ZJrB_5PeW-3D5_NsoOT1sjX7I-Vd" },
+    { title: "百足", date: "2026.09.04", id: "1y5nwwE7L0GvkmP0mvwGFTCI6jcIBtY7d" },
   ];
 
   const grid = document.getElementById('devlogGrid');
