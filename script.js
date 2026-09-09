@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: "多言語対応", date: "2026.09.06", id: "1TtW74a0n4rV5lgWnnyUDctFDxcFGAdTd" },
     { title: "ラジオ実装", date: "2026.09.09", id: "1UBBYV2_v4kuL6LZzWyn0LTbqjD35LCE-" },
     { title: "核爆発ガラス散る", date: "2026.09.09", id: "1SdlX7u88ijNIeLySUt8Of0Bjcqf7YUmP" },
+    { title: "世界観構築", date: "2026.09.09", id: "1zzlW12XWd1E0EUgAE9zm0rYAH23_l1Mu" },
   ];
 
   const grid = document.getElementById('devlogGrid');
