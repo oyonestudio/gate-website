@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: "世界観構築", date: "2026.09.09", id: "1zzlW12XWd1E0EUgAE9zm0rYAH23_l1Mu" },
     { title: "タイトル画面変更", date: "2026.09.10", id: "1OYK6Hh9Xqvn7RUDSe7slWQvbmt63uI7x" },
     { title: "パリィポイントが使えるお店", date: "2026.09.14", id: "1O2RzT0Gkxbf28b2nypahz4L1WtnJHdT8" },
+    { title: "ストアとセーブ", date: "2026.09.18", id: "1vPC28SqCO2FxOFKSPl48IBHYRJnyCkP2" },
   ];
 
   const grid = document.getElementById('devlogGrid');
