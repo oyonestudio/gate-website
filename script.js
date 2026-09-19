@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: "タイトル画面変更", date: "2026.09.10", id: "1OYK6Hh9Xqvn7RUDSe7slWQvbmt63uI7x" },
     { title: "パリィポイントが使えるお店", date: "2026.09.14", id: "1O2RzT0Gkxbf28b2nypahz4L1WtnJHdT8" },
     { title: "ストアとセーブ", date: "2026.09.18", id: "1vPC28SqCO2FxOFKSPl48IBHYRJnyCkP2" },
+    { title: "エアシューター演出", date: "2026.09.19", id: "1yMCQpQWG8wy4QxCFEuLRMqGdzqcV6Jsv" },
   ];
 
   const grid = document.getElementById('devlogGrid');
