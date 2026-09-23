@@ -104,6 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: "パリィポイントが使えるお店", date: "2026.09.14", id: "1O2RzT0Gkxbf28b2nypahz4L1WtnJHdT8" },
     { title: "ストアとセーブ", date: "2026.09.18", id: "1vPC28SqCO2FxOFKSPl48IBHYRJnyCkP2" },
     { title: "エアシューター演出", date: "2026.09.19", id: "1yMCQpQWG8wy4QxCFEuLRMqGdzqcV6Jsv" },
+    { title: "双眼鏡ロボット演出", date: "2026.09.21", id: "1_iBWAGGqUaxiYQ58vyELbxPOYeON7PuV" },
+    { title: "団地の門ギミック", date: "2026.09.23", id: "1NLky-28g86TReQFRN8Mu51ZWQ8RgCsor" },
   ];
 
   const grid = document.getElementById('devlogGrid');
