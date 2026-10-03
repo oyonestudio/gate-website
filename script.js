@@ -5,23 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.getElementById('navToggle');
 
   navToggle.addEventListener('click', () => {
-    header.classList.toggle('nav-open');
+    const open = header.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', String(open));
   });
 
   document.querySelectorAll('.nav a').forEach(link => {
     link.addEventListener('click', () => {
       header.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
     });
   });
-
-  /* ===== Hero parallax ===== */
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    window.addEventListener('scroll', () => {
-      const offset = Math.min(window.scrollY * 0.25, 120);
-      hero.style.backgroundPosition = `center calc(50% + ${offset}px)`;
-    });
-  }
 
   /* ===== To-top button ===== */
   const toTop = document.getElementById('toTop');
@@ -29,25 +22,28 @@ document.addEventListener('DOMContentLoaded', () => {
     toTop.classList.toggle('visible', window.scrollY > 480);
   });
   toTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
   });
 
   /* ===== Screenshot lightbox ===== */
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
 
+  let previousFocus;
   document.querySelectorAll('.shot').forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.dataset.full;
-      lightboxImg.alt = img.alt;
-      lightbox.classList.add('open');
+    const button = document.createElement('button');
+    button.type = 'button'; button.className = 'shot-button';
+    button.setAttribute('aria-label', img.alt + 'を拡大');
+    img.before(button); button.append(img);
+    button.addEventListener('click', () => {
+      previousFocus = button;
+      lightboxImg.src = img.dataset.full; lightboxImg.alt = img.alt;
+      lightbox.showModal(); document.body.style.overflow = 'hidden';
     });
   });
-
-  lightbox.addEventListener('click', () => {
-    lightbox.classList.remove('open');
-    lightboxImg.src = '';
-  });
+  lightbox.querySelector('button').addEventListener('click', () => lightbox.close());
+  lightbox.addEventListener('click', e => {if(e.target === lightbox) lightbox.close();});
+  lightbox.addEventListener('close', () => {document.body.style.overflow = ''; previousFocus?.focus();});
 
   /* ===== Dev log video gallery (Google Drive embed) ===== */
   const devlog = [
@@ -134,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
       stopAllPlayers();
       player.classList.add('is-playing');
       player.innerHTML = `
-        <iframe src="https://drive.google.com/file/d/${item.id}/preview" allow="autoplay" loading="lazy"></iframe>
+        <iframe src="https://drive.google.com/file/d/${item.id}/preview" allow="autoplay" loading="lazy" title="${item.title}の開発動画"></iframe>
         <div class="devlog-loading"><span>読み込み中...</span></div>
       `;
       const loadingEl = player.querySelector('.devlog-loading');
@@ -151,5 +147,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   grid.appendChild(frag);
+  const older = [...grid.children].slice(6);
+  older.forEach(card => card.hidden = true);
+  const more = document.getElementById('moreDevlog');
+  more.addEventListener('click', () => {
+    const expanded = more.getAttribute('aria-expanded') !== 'true';
+    more.setAttribute('aria-expanded', String(expanded));
+    older.forEach(card => card.hidden = !expanded);
+    if (!expanded) stopAllPlayers();
+    more.textContent = expanded ? '表示を少なくする' : '過去の開発記録を表示';
+  });
 
 });

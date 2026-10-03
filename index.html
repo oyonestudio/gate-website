@@ -11,27 +11,26 @@
 <meta property="og:title" content="門 GATE | OYONE studio">
 <meta property="og:description" content="昭和の雰囲気が漂う地方都市を舞台にしたレトロ近未来ホラーアクションアドベンチャー。PC(Steam)にて2026年冬発売予定。">
 <meta property="og:url" content="https://oyonestudio.github.io/gate-website/">
-<meta property="og:image" content="https://oyonestudio.github.io/gate-website/assets/keyart.jpg">
+<meta property="og:image" content="https://oyonestudio.github.io/gate-website/assets/brand/hero.jpg">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="門 GATE | OYONE studio">
 <meta name="twitter:description" content="昭和の雰囲気が漂う地方都市を舞台にしたレトロ近未来ホラーアクションアドベンチャー。PC(Steam)にて2026年冬発売予定。">
-<meta name="twitter:image" content="https://oyonestudio.github.io/gate-website/assets/keyart.jpg">
+<meta name="twitter:image" content="https://oyonestudio.github.io/gate-website/assets/brand/hero.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&family=DotGothic16&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/brand/logo.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip-link" href="#story">本文へ移動</a>
 
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="#top" class="logo-mark">
-      <img src="assets/logo.png" alt="門 GATE ロゴ">
+      <img src="assets/brand/logo.png" alt="門 GATE ロゴ">
     </a>
-    <nav class="nav">
+    <nav class="nav" id="navigation" aria-label="メインナビゲーション">
       <a href="#story">ストーリー</a>
       <a href="#features">特徴</a>
       <a href="#screenshots">スクリーンショット</a>
@@ -39,7 +38,7 @@
       <a href="#info">ゲーム情報</a>
     </nav>
     <a href="https://store.steampowered.com/app/4718160/_GATE/" target="_blank" rel="noopener" class="btn btn-small header-cta">Steamで見る</a>
-    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="navigation">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -47,30 +46,22 @@
 
 <main>
 
-  <section class="hero" id="top" style="background-image: linear-gradient(180deg, rgba(4,4,6,0.35) 0%, rgba(4,4,6,0.55) 55%, rgba(4,4,6,0.98) 100%), url('assets/keyart.jpg');">
+  <section class="hero" id="top" aria-label="門 GATE">
+    <picture class="hero-art"><source media="(max-width: 700px)" srcset="assets/brand/hero-mobile.jpg"><img src="assets/brand/hero.jpg" alt="昭和の団地に立ち向かう少年と、門 GATEのロゴ" width="1232" height="706" fetchpriority="high"></picture>
     <div class="hero-inner container">
-      <p class="eyebrow">RETRO NEAR-FUTURE HORROR ACTION ADVENTURE</p>
-      <h1 class="title-jp">門 <span class="title-en">GATE</span></h1>
-      <p class="hero-lead">
-        昭和の空気が残る地方都市で、発明好きの少年は自らの手で武器を作り、<br class="br-desktop">
-        未来から来たAI兵器に立ち向かう。
-      </p>
-      <div class="hero-actions">
-        <a href="https://store.steampowered.com/app/4718160/_GATE/" target="_blank" rel="noopener" class="btn btn-primary">Steamでウィッシュリストに追加</a>
-        <a href="#story" class="btn btn-ghost">ストーリーを見る</a>
-      </div>
-      <div class="hero-meta">
-        <span>2026年第4四半期 発売予定</span>
-        <span>PC(Steam)</span>
-        <span>日本語 / English / 繁體中文 / 한국어</span>
-      </div>
+      <p class="eyebrow">OYONE STUDIO PRESENTS / 門 GATE</p>
+      <h1 class="title-jp">懐かしい街に、<br>知らない恐怖。</h1>
+      <p class="hero-lead">昭和の少年は、自らの発明で未来に抗う。</p>
+      <div class="hero-actions"><a href="https://store.steampowered.com/app/4718160/_GATE/" target="_blank" rel="noopener" class="btn btn-primary">Steamでウィッシュリストに追加 <span aria-hidden="true">↗</span></a><a href="#screenshots" class="btn btn-ghost">ゲーム画面を見る <span aria-hidden="true">↓</span></a></div>
     </div>
+    <a class="hero-index" href="#story">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a>
   </section>
+  <div class="release-strip"><span>RETRO-FUTURE HORROR</span><span>2026年第4四半期 発売予定</span><span>PC / STEAM</span></div>
 
   <section class="section" id="story">
     <div class="container container-narrow">
       <p class="section-eyebrow">STORY</p>
-      <h2 class="section-title">概要</h2>
+      <h2 class="section-title">その日常は、<br>もう戻らない。</h2>
       <p class="story-text">
         『門 GATE』は、昭和の日本を思わせる地方都市を舞台にした一人称視点のレトロ近未来ホラーアクションアドベンチャーゲームです。
       </p>
@@ -86,10 +77,10 @@
   <section class="section section-alt" id="features">
     <div class="container">
       <p class="section-eyebrow">FEATURES</p>
-      <h2 class="section-title">特徴</h2>
+      <h2 class="section-title">探索せよ。発明せよ。<br>生き延びろ。</h2>
       <div class="feature-row">
         <div class="feature-media">
-          <img src="assets/store/alley.jpg" alt="雨の降る昭和の路地裏">
+          <img src="assets/store/alley.jpg" alt="雨の降る昭和の路地裏" loading="lazy" decoding="async">
         </div>
         <div class="feature-text">
           <p class="feature-num">01</p>
@@ -99,7 +90,7 @@
       </div>
       <div class="feature-row feature-row-reverse">
         <div class="feature-media">
-          <img src="assets/store/craft.jpg" alt="素材から武器を開発する画面">
+          <img src="assets/store/craft.jpg" alt="素材から武器を開発する画面" loading="lazy" decoding="async">
         </div>
         <div class="feature-text">
           <p class="feature-num">02</p>
@@ -109,7 +100,7 @@
       </div>
       <div class="feature-row">
         <div class="feature-media">
-          <img src="assets/store/tentacle.jpg" alt="和室に現れた異形">
+          <img src="assets/store/tentacle.jpg" alt="和室に現れた異形" loading="lazy" decoding="async">
         </div>
         <div class="feature-text">
           <p class="feature-num">03</p>
@@ -123,16 +114,16 @@
   <section class="section" id="screenshots">
     <div class="container">
       <p class="section-eyebrow">SCREENSHOTS</p>
-      <h2 class="section-title">スクリーンショット</h2>
-      <p class="section-lead">開発中の最新ビルドから。全て実際のゲーム画面です。</p>
+      <h2 class="section-title">門の向こう側。</h2>
+      <p class="section-lead">開発中の実際のゲーム画面。画像を選択すると拡大できます。</p>
       <div class="shot-grid shot-grid-wide">
-        <img src="assets/store/shop.jpg" alt="道具屋でガス銃を構える" class="shot" data-full="assets/store/shop.jpg">
-        <img src="assets/store/alley.jpg" alt="雨の降る昭和の路地裏" class="shot" data-full="assets/store/alley.jpg">
-        <img src="assets/store/danchi.jpg" alt="団地の一室での会話" class="shot" data-full="assets/store/danchi.jpg">
-        <img src="assets/store/neon.jpg" alt="ネオンに照らされた通路" class="shot" data-full="assets/store/neon.jpg">
-        <img src="assets/store/craft.jpg" alt="素材から武器を開発する画面" class="shot" data-full="assets/store/craft.jpg">
-        <img src="assets/store/tentacle.jpg" alt="和室に現れた異形" class="shot" data-full="assets/store/tentacle.jpg">
-        <img src="assets/store/peep.jpg" alt="窓の向こうを覗き見る" class="shot" data-full="assets/store/peep.jpg">
+        <img src="assets/store/shop.jpg" alt="道具屋でガス銃を構える" class="shot" data-full="assets/store/shop.jpg" loading="lazy" decoding="async">
+        <img src="assets/store/alley.jpg" alt="雨の降る昭和の路地裏" class="shot" data-full="assets/store/alley.jpg" loading="lazy" decoding="async">
+        <img src="assets/store/danchi.jpg" alt="団地の一室での会話" class="shot" data-full="assets/store/danchi.jpg" loading="lazy" decoding="async">
+        <img src="assets/store/neon.jpg" alt="ネオンに照らされた通路" class="shot" data-full="assets/store/neon.jpg" loading="lazy" decoding="async">
+        <img src="assets/store/craft.jpg" alt="素材から武器を開発する画面" class="shot" data-full="assets/store/craft.jpg" loading="lazy" decoding="async">
+        <img src="assets/store/tentacle.jpg" alt="和室に現れた異形" class="shot" data-full="assets/store/tentacle.jpg" loading="lazy" decoding="async">
+        <img src="assets/store/peep.jpg" alt="窓の向こうを覗き見る" class="shot" data-full="assets/store/peep.jpg" loading="lazy" decoding="async">
       </div>
     </div>
   </section>
@@ -141,8 +132,9 @@
     <div class="container">
       <p class="section-eyebrow">DEVELOPMENT LOG</p>
       <h2 class="section-title">開発記録</h2>
-      <p class="section-lead">これまでSNSに投稿してきた制作過程の記録です。時系列順に並んでいます。</p>
+      <p class="section-lead">これまでSNSに投稿してきた制作過程の記録です。新しい記録からご覧いただけます。</p>
       <div class="devlog-grid" id="devlogGrid"></div>
+<button class="btn btn-outline" id="moreDevlog" type="button" aria-expanded="false">過去の開発記録を表示</button><noscript><p>制作過程は下記のXでもご覧いただけます。</p></noscript>
       <a href="https://x.com/oyonelcad" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top: 32px;">Xで制作過程をチェックする</a>
     </div>
   </section>
@@ -166,7 +158,7 @@
   <section class="section cta-section" id="contact">
     <div class="container container-narrow">
       <p class="section-eyebrow">WISHLIST</p>
-      <h2 class="section-title">Steamでウィッシュリストに登録しよう</h2>
+      <h2 class="section-title">この街の、その先へ。</h2>
       <p class="section-lead">発売情報をいち早く受け取るには、Steamのウィッシュリスト登録が一番確実です。</p>
       <div class="hero-actions cta-actions">
         <a href="https://store.steampowered.com/app/4718160/_GATE/" target="_blank" rel="noopener" class="btn btn-primary">Steamストアページへ</a>
@@ -179,17 +171,15 @@
 
 <footer class="footer">
   <div class="container footer-inner">
-    <img src="assets/logo.png" alt="門 GATE ロゴ" class="footer-logo">
-    <p class="footer-note">OYONE studio ｜ お問い合わせ: s1219y@me.com</p>
+    <img src="assets/brand/logo.png" alt="門 GATE ロゴ" class="footer-logo">
+    <p class="footer-note">OYONE studio ｜ お問い合わせ: <a href="mailto:s1219y@me.com">s1219y@me.com</a></p>
     <p class="footer-copy">&copy; 2026 OYONE studio</p>
   </div>
 </footer>
 
 <button class="to-top" id="toTop" aria-label="トップへ戻る">↑</button>
 
-<div class="lightbox" id="lightbox">
-  <img src="" alt="" id="lightboxImg">
-</div>
+<dialog class="lightbox" id="lightbox" aria-label="スクリーンショット拡大"><button class="lightbox-close" aria-label="画像を閉じる" autofocus>×</button><img alt="" id="lightboxImg"></dialog>
 
 <script src="script.js"></script>
 </body>
