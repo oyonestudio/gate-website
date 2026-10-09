@@ -107,13 +107,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('devlogGrid');
   const frag = document.createDocumentFragment();
 
-  // クリックした動画だけを読み込み、他はプレースホルダーに戻すことで
-  // 複数の動画が同時に再生されっぱなしになるのを防ぐ
-  const stopAllPlayers = () => {
-    grid.querySelectorAll('.devlog-player.is-playing').forEach(el => {
-      el.classList.remove('is-playing');
-      el.innerHTML = '<button type="button" class="devlog-play" aria-label="再生">▶</button>';
-    });
+  // Googleドライブの動画は、外部サイトの <video> からは再生できない
+  // (Google が Cross-Origin-Resource-Policy: same-site を付けているため)。
+  // 埋め込みプレイヤーを使うしかないので、せめてクリックの回数を減らす。
+  //
+  // 以前は「自前の▶を押す → プレイヤーが出る → プレイヤーの再生を押す」の
+  // 2回押しで、1回目で始まらないため再生できないように見えていた。
+  // 画面に近づいた時点でプレイヤーを先に出しておけば、最初の1クリックで再生される。
+  const players = [];
+
+  const mount = (player) => {
+    if (player.dataset.mounted === '1') return;
+    player.dataset.mounted = '1';
+    player.innerHTML =
+      '<iframe src="https://drive.google.com/file/d/' + player.dataset.id + '/preview"' +
+      ' title="' + player.dataset.title + '" allow="autoplay" loading="lazy"></iframe>';
+  };
+
+  const unmount = (player) => {
+    if (player.dataset.mounted !== '1') return;
+    // 再生中のものは触らない(iframe に焦点があるかで判断する)
+    const frame = player.querySelector('iframe');
+    if (frame && document.activeElement === frame) return;
+    player.dataset.mounted = '0';
+    player.innerHTML = '<span class="devlog-standby"></span>';
   };
 
   // 新しい動画が一番上に来るように表示だけ逆順にする(配列自体は追加しやすいよう時系列順のまま)
@@ -123,39 +140,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const player = document.createElement('div');
     player.className = 'devlog-player';
-    player.innerHTML = '<button type="button" class="devlog-play" aria-label="再生">▶</button>';
-
-    player.addEventListener('click', () => {
-      if (player.classList.contains('is-playing')) return;
-      stopAllPlayers();
-      player.classList.add('is-playing');
-      player.innerHTML = `
-        <iframe src="https://drive.google.com/file/d/${item.id}/preview" allow="autoplay" loading="lazy" title="${item.title}の開発動画"></iframe>
-        <div class="devlog-loading"><span>読み込み中...</span></div>
-      `;
-      const loadingEl = player.querySelector('.devlog-loading');
-      setTimeout(() => { loadingEl.classList.add('is-hidden'); }, 2500);
-    });
+    player.dataset.id = item.id;
+    player.dataset.title = item.title;
+    player.dataset.mounted = '0';
+    player.innerHTML = '<span class="devlog-standby"></span>';
 
     const meta = document.createElement('div');
     meta.className = 'devlog-meta';
-    meta.innerHTML = `<p class="devlog-date">${item.date}</p><p class="devlog-title">${item.title}</p>`;
+    meta.innerHTML = `<p class="devlog-date">${item.date}</p><p class="devlog-title-item">${item.title}</p>`;
 
     card.appendChild(player);
     card.appendChild(meta);
     frag.appendChild(card);
+    players.push(player);
   });
 
   grid.appendChild(frag);
-  const older = [...grid.children].slice(6);
-  older.forEach(card => card.hidden = true);
-  const more = document.getElementById('moreDevlog');
-  more.addEventListener('click', () => {
-    const expanded = more.getAttribute('aria-expanded') !== 'true';
-    more.setAttribute('aria-expanded', String(expanded));
-    older.forEach(card => card.hidden = !expanded);
-    if (!expanded) stopAllPlayers();
-    more.textContent = expanded ? '表示を少なくする' : '過去の開発記録を表示';
-  });
 
+  // 近づいたら出す / 遠ざかったらしまう(全部出しっぱなしにすると重いため)
+  if ('IntersectionObserver' in window) {
+    const near = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) mount(e.target); });
+    }, { rootMargin: '400px 0px' });
+
+    const far = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (!e.isIntersecting) unmount(e.target); });
+    }, { rootMargin: '1800px 0px' });
+
+    players.forEach(p => { near.observe(p); far.observe(p); });
+  } else {
+    players.forEach(mount);
+  }
 });
