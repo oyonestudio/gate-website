@@ -102,6 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: "エアシューター演出", date: "2026.09.19", id: "1yMCQpQWG8wy4QxCFEuLRMqGdzqcV6Jsv" },
     { title: "団地の門ギミック", date: "2026.09.23", id: "1NLky-28g86TReQFRN8Mu51ZWQ8RgCsor" },
     { title: "召喚の儀式", date: "2026.09.23", id: "1_wn3CVuMDEtS_mkkOwtpeu-73_gdwCSU" },
+    { title: "ダイジェスト1", date: "2026.09.29", id: "1gb7bk7wyNKc9UD0W1RH5Ni3W0TcnyjTz" },
+    { title: "ダイジェスト2", date: "2026.09.29", id: "1Td5ROqLZ_sPGoSsxlDFcu2preuk6fL7V" },
   ];
 
   const grid = document.getElementById('devlogGrid');
