@@ -226,6 +226,11 @@ document.addEventListener('DOMContentLoaded', () => {
         "title": "昭和の団地で、未来のAIに立ち向かう｜門 GATE ダイジェスト1",
         "date": "YouTube公開動画",
         "id": "3GaFNvW7DXQ"
+    },
+    {
+        "title": "昭和の町を探索し、自作の武器で戦う｜門 GATE ダイジェスト2",
+        "date": "YouTube公開動画",
+        "id": "fQppEAqHy5g"
     }
 ];
 
