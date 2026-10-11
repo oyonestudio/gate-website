@@ -231,6 +231,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "title": "昭和の町を探索し、自作の武器で戦う｜門 GATE ダイジェスト2",
         "date": "YouTube公開動画",
         "id": "fQppEAqHy5g"
+    },
+    {
+        "title": "団地にエレベーターを実装｜門 GATE 制作記録",
+        "date": "2026.06.18 制作記録",
+        "id": "g4toNSqGgKs"
+    },
+    {
+        "title": "ダイヤル式の鍵を実装｜門 GATE 制作記録",
+        "date": "2026.07.03 制作記録",
+        "id": "HAsenIogPJA"
     }
 ];
 
