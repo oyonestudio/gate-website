@@ -241,6 +241,11 @@ document.addEventListener('DOMContentLoaded', () => {
         "title": "ダイヤル式の鍵を実装｜門 GATE 制作記録",
         "date": "2026.07.03 制作記録",
         "id": "HAsenIogPJA"
+    },
+    {
+        "title": "門 GATE｜戦闘ダイジェスト",
+        "date": "戦闘ゲームプレイ映像",
+        "id": "MFWUZ7g7U6g"
     }
 ];
 
