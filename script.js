@@ -246,6 +246,16 @@ document.addEventListener('DOMContentLoaded', () => {
         "title": "門 GATE｜戦闘ダイジェスト",
         "date": "戦闘ゲームプレイ映像",
         "id": "MFWUZ7g7U6g"
+    },
+    {
+        "title": "鬼ごっこ屋敷｜多脚の鬼オメガに追われる｜門 GATE",
+        "date": "2026.11.15 制作記録",
+        "id": "5cpZw2DHpIY"
+    },
+    {
+        "title": "忍者屋敷の怪異たち｜門 GATE ホラー映像",
+        "date": "2026.11.17 ゲームプレイ映像",
+        "id": "Xn8UHskCBKs"
     }
 ];
 
