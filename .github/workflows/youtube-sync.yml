@@ -1,0 +1,33 @@
+# OYONE studio の YouTube に上げた動画を、6時間ごとにサイトの開発記録へ自動で足す
+name: YouTubeの新着をサイトへ
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 新着を探して一覧に足す
+        run: python tools/sync_youtube.py
+      - name: 変わっていれば公開する
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet; then echo "新着なし"; exit 0; fi
+          git config user.name "OYONE Studio (auto)"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "YouTubeの新着動画をサイトの開発記録に追加（自動）"
+          git push
+          # 自動のコミットでは Pages の作り直しが走らないことがあるので、明示的に頼む
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true

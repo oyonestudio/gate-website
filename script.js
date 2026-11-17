@@ -256,6 +256,21 @@ document.addEventListener('DOMContentLoaded', () => {
         "title": "忍者屋敷の怪異たち｜門 GATE ホラー映像",
         "date": "2026.11.17 ゲームプレイ映像",
         "id": "Xn8UHskCBKs"
+    },
+    {
+        "title": "steam「門GATE」 Now in 10 languages. Japanese horror FPS \"GATE\".",
+        "date": "2026.10.12 YouTube公開",
+        "id": "9b99QtG2ezY"
+    },
+    {
+        "title": "１０時間以上かかったモデリング。内部は抵抗制御器やカム軸だから。このこだわりは自己満",
+        "date": "2026.11.17 YouTube公開",
+        "id": "USmmCnLwFfY"
+    },
+    {
+        "title": "unityとblenderモデリング。「門GATE」steamリリース予定",
+        "date": "2026.11.17 YouTube公開",
+        "id": "qzVKxZqXTrE"
     }
 ];
 
