@@ -271,6 +271,11 @@ document.addEventListener('DOMContentLoaded', () => {
         "title": "unityとblenderモデリング。「門GATE」steamリリース予定",
         "date": "2026.11.17 YouTube公開",
         "id": "qzVKxZqXTrE"
+    },
+    {
+        "title": "圧倒的作業量をこなして作成しています",
+        "date": "2026.11.18 YouTube公開",
+        "id": "Bn4kLvYKufE"
     }
 ];
 
