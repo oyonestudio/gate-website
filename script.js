@@ -276,6 +276,11 @@ document.addEventListener('DOMContentLoaded', () => {
         "title": "圧倒的作業量をこなして作成しています",
         "date": "2026.11.18 YouTube公開",
         "id": "Bn4kLvYKufE"
+    },
+    {
+        "title": "昭和の映像　「門GATE」より",
+        "date": "2026.11.20 YouTube公開",
+        "id": "9IjDYk9xrUE"
     }
 ];
 
